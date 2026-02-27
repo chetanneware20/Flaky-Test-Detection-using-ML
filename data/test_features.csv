@@ -1,0 +1,5 @@
+test_name,failure_rate,status_switches,avg_duration,duration_variance
+test_login,0.50,3,6.10,11.25
+test_search,0.00,0,2.50,0.01
+test_checkout,0.00,0,5.10,0.01
+test_payment,0.50,3,7.25,9.50
