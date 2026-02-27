@@ -3,3 +3,5 @@ test_login,0.50,3,6.10,11.25,-1,Flaky
 test_search,0.00,0,2.50,0.01,0,Stable
 test_checkout,0.00,0,5.10,0.01,0,Stable
 test_payment,0.50,3,7.25,9.50,-1,Flaky
+test_profile_update,0.25,2,4.80,3.20,-1,Flaky
+test_logout,0.00,0,1.80,0.00,0,Stable
