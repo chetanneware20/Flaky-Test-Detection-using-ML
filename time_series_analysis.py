@@ -17,6 +17,6 @@ def rolling_failure_rate(csv_path, window=3):
     return df
 
 if __name__ == "__main__":
-    ts_df = rolling_failure_rate("data/test_results.csv")
+    ts_df = rolling_failure_rate("test_results.csv")
     ts_df.to_csv("data/time_series_output.csv", index=False)
     print("✅ Time-series analysis completed")
