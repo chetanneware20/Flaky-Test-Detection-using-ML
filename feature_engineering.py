@@ -25,6 +25,6 @@ def generate_features(csv_path):
     return pd.DataFrame(features)
 
 if __name__ == "__main__":
-    feature_df = generate_features("test_results.csv")
-    feature_df.to_csv("test_features.csv", index=False)
+    feature_df = generate_features("data/test_results.csv")
+    feature_df.to_csv("data/test_features.csv", index=False)
     print("✅ Feature engineering completed")
