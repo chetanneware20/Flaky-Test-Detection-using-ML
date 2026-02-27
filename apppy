@@ -9,15 +9,25 @@ st.title("🧪 Flaky Test Detection Using ML")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data", "flaky_results.csv")
 
+st.write("📂 Looking for file at:", DATA_PATH)
+
 if not os.path.exists(DATA_PATH):
-    st.error("❌ Required file not found: data/flaky_results.csv")
-    st.info("Run feature_engineering.py and clustering_model.py first.")
+    st.error("❌ data/flaky_results.csv not found")
     st.stop()
 
-df = pd.read_csv(DATA_PATH)
+try:
+    df = pd.read_csv(DATA_PATH)
+except Exception as e:
+    st.error("❌ CSV read error")
+    st.code(str(e))
+    st.stop()
 
 st.subheader("📊 All Test Results")
 st.dataframe(df, use_container_width=True)
+
+if "flaky_label" not in df.columns:
+    st.error("❌ Column 'flaky_label' missing in CSV")
+    st.stop()
 
 st.subheader("⚠️ Flaky Tests")
 flaky_df = df[df["flaky_label"] == "Flaky"]
