@@ -4,20 +4,17 @@ import os
 
 st.set_page_config(page_title="Flaky Test Detection", layout="wide")
 
-st.title("🧪 Flaky Test Detection Using Machine Learning")
+st.title("🧪 Flaky Test Detection Using ML")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(BASE_DIR, "data", "flaky_results.csv")
+DATA_PATH = os.path.join(BASE_DIR, "data", "flaky_results.csv")
 
-st.write("📂 Looking for file at:")
-st.code(DATA_FILE)
-
-if not os.path.exists(DATA_FILE):
-    st.error("❌ flaky_results.csv not found")
-    st.info("Check that the file exists inside the data/ folder")
+if not os.path.exists(DATA_PATH):
+    st.error("❌ Required file not found: data/flaky_results.csv")
+    st.info("Run feature_engineering.py and clustering_model.py first.")
     st.stop()
 
-df = pd.read_csv(DATA_FILE)
+df = pd.read_csv(DATA_PATH)
 
 st.subheader("📊 All Test Results")
 st.dataframe(df, use_container_width=True)
