@@ -1,0 +1,10 @@
+test_name,execution_date,status,duration
+test_login,2024-01-01,Pass,3.2
+test_login,2024-01-02,Fail,8.9
+test_login,2024-01-03,Pass,3.1
+test_checkout,2024-01-01,Pass,5.1
+test_checkout,2024-01-02,Pass,5.0
+test_checkout,2024-01-03,Pass,5.2
+test_payment,2024-01-01,Fail,9.8
+test_payment,2024-01-02,Pass,4.5
+test_payment,2024-01-03,Fail,10.1
